@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Clicker+Script&family=Playfair+Display:wght@400;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-coffee-light: #f9f5f0;
+  --color-coffee-DEFAULT: #6F4E37;
+  --color-coffee-dark: #3b2f2f;
+  --color-gold: #f9c06a;
+  --font-playfair: "Playfair Display", serif;
+  --font-clicker: "Clicker Script", cursive;
+}
+
+@layer base {
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Custom Utilities / Components */
+@layer components {
+  header {
+    @apply flex justify-between items-center w-full box-border z-10 text-white px-5 py-5 transition-all duration-300;
+    @apply relative bg-black; /* Mobile defaults */
+    @apply md:absolute md:bg-transparent md:px-[50px]; /* Desktop overrides */
+  }
+  header.header-scrolled {
+    @apply fixed top-0 bg-black shadow-md;
+  }
+}

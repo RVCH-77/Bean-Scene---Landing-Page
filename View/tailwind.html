@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bean Scene Coffee</title>
+    <link rel="stylesheet" href="View/output.css">
+    
+    <!-- Ionicons for generic social icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+    <!-- Google Fonts needed for the design -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Clicker+Script&display=swap" rel="stylesheet">
+</head>
+<body class="bg-coffee-light font-[Playfair Display] text-coffee-dark overflow-x-hidden">
+
+    <!-- Header -->
+    <header id="main-header" class="flex justify-between items-center px-10 py-5 w-full z-50 transition-all duration-300 relative bg-black md:absolute md:bg-transparent">
+        <div class="text-2xl font-['Clicker_Script'] font-bold text-white">Bean Scene</div>
+        <nav class="hidden md:block">
+            <ul class="flex gap-10 list-none">
+                <li><a href="#" class="text-white text-lg hover:text-orange-200 no-underline">Home</a></li>
+                <li><a href="#" class="text-white text-lg hover:text-orange-200 no-underline">Menu</a></li>
+                <li><a href="#" class="text-white text-lg hover:text-orange-200 no-underline">About Us</a></li>
+                <li><a href="#" class="text-white text-lg hover:text-orange-200 no-underline">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="flex gap-4">
+            <button class="hidden md:block bg-transparent border-none text-white text-lg cursor-pointer">Sign In</button>
+            <button class="bg-gold text-black border-none px-6 py-2 rounded-full font-bold cursor-pointer hover:bg-[#e0ac5e]">Sign Up</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="h-screen bg-[url('../img/principal.jpg')] bg-cover bg-center text-white flex flex-col justify-center items-start text-left px-[10%] relative font-playfair">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black/30 z-0"></div>
+        
+        <h2 class="text-xl md:text-2xl mb-2 font-normal z-10">We've got your morning covered with</h2>
+        <h1 class="text-[80px] md:text-[220px] font-['Clicker_Script'] leading-none mb-5 z-10">Coffee</h1>
+        <p class="max-w-[500px] text-base md:text-lg leading-relaxed mb-8 z-10">It is best to start your day with a cup of coffee. Discover the best flavors coffee you will ever have. We provide the best for our customers.</p>
+        <button class="bg-gold text-black border-none px-6 py-3 rounded-full font-bold text-lg cursor-pointer hover:bg-[#e0ac5e] z-10">Order Now</button>
+    </section>
+
+    <!-- Discover Section -->
+    <section class="flex flex-col md:flex-row justify-between items-center py-20 px-[10%] gap-10 bg-white">
+        <div class="flex-1 text-left">
+            <h2 class="text-4xl font-bold mb-5 text-coffee-dark">Discover the best coffee</h2>
+            <p class="text-lg text-gray-600 mb-8 leading-relaxed">Bean Scene is a coffee shop that provides you with quality coffee that helps boost your productivity and helps build your mood. Having a cup of coffee is good, but having a cup of real coffee is greater. There is no doubt that you will enjoy this coffee more than others you have ever tasted.</p>
+            <button class="bg-gold text-black border-none px-6 py-3 rounded-full font-bold text-lg cursor-pointer hover:bg-[#e0ac5e]">Learn More</button>
+        </div>
+        <div class="flex-1 flex justify-center">
+            <img src="../img/Segunda.jpg" alt="Coffee Bean Splash" class="max-w-full h-auto drop-shadow-xl rounded-lg radius-[20px]"> 
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="text-center py-20 px-[5%] bg-coffee-light">
+        <h2 class="text-4xl font-bold mb-4 text-coffee-dark">Enjoy a new blend of coffee style</h2>
+        <p class="text-gray-600 mb-12">Explore all flavours of coffee with us. There is always a new cup worth experiencing.</p>
+        
+        <div class="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-8 sm:overflow-visible sm:pb-0 [&::-webkit-scrollbar]:hidden">
+            <!-- Card Example -->
+            <div class="min-w-[80%] sm:min-w-0 snap-center bg-[#fff0db] p-5 border border-[#ffe0b2] text-center transition-transform hover:-translate-y-2 relative rounded-[20px]">
+                <img src="../img/cappucchino.jpg" alt="Cappuccino" class="w-full h-auto mb-4 mix-blend-multiply rounded-[20px]">
+                <h3 class="text-xl font-bold text-coffee-dark mb-2">Cappuccino</h3>
+                <p class="text-sm text-gray-600 mb-4">Coffee 50% | Milk 50%</p>
+                <p class="text-lg font-bold text-coffee-dark mb-4">$8.50</p>
+                <button class="bg-gold text-black border-none px-5 py-2 rounded-full font-bold cursor-pointer hover:bg-[#e0ac5e] opacity-0 hover:opacity-100 transition-opacity absolute bottom-5 left-1/2 -translate-x-1/2 shadow-md">Order Now</button>
+            </div>
+             <div class="min-w-[80%] sm:min-w-0 snap-center bg-[#fff0db] p-5 border border-[#ffe0b2] text-center transition-transform hover:-translate-y-2 relative rounded-[20px]">
+                <img src="../img/Latte.jpg" alt="Chai Latte" class="w-full h-auto mb-4 mix-blend-multiply rounded-[20px]">
+                <h3 class="text-xl font-bold text-coffee-dark mb-2">Chai Latte</h3>
+                <p class="text-sm text-gray-600 mb-4">Coffee 50% | Milk 50%</p>
+                <p class="text-lg font-bold text-coffee-dark mb-4">$8.50</p>
+                <button class="bg-gold text-black border-none px-5 py-2 rounded-full font-bold cursor-pointer hover:bg-[#e0ac5e] opacity-0 hover:opacity-100 transition-opacity absolute bottom-5 left-1/2 -translate-x-1/2 shadow-md">Order Now</button>
+            </div>
+             <div class="min-w-[80%] sm:min-w-0 snap-center bg-[#fff0db] p-5 border border-[#ffe0b2] text-center transition-transform hover:-translate-y-2 relative rounded-[20px]">
+                <img src="../img/macchiato.jpg" alt="Macchiato" class="w-full h-auto mb-4 mix-blend-multiply rounded-[20px]">
+                <h3 class="text-xl font-bold text-coffee-dark mb-2">Macchiato</h3>
+                <p class="text-sm text-gray-600 mb-4">Coffee 50% | Milk 50%</p>
+                <p class="text-lg font-bold text-coffee-dark mb-4">$8.50</p>
+                <button class="bg-gold text-black border-none px-5 py-2 rounded-full font-bold cursor-pointer hover:bg-[#e0ac5e] opacity-0 hover:opacity-100 transition-opacity absolute bottom-5 left-1/2 -translate-x-1/2 shadow-md">Order Now</button>
+            </div>
+             <div class="min-w-[80%] sm:min-w-0 snap-center bg-[#fff0db] p-5 border border-[#ffe0b2] text-center transition-transform hover:-translate-y-2 relative rounded-[20px]">
+                <img src="../img/expresso.jpg" alt="Espresso" class="w-full h-auto mb-4 mix-blend-multiply rounded-[20px]">
+                <h3 class="text-xl font-bold text-coffee-dark mb-2">Espresso</h3>
+                <p class="text-sm text-gray-600 mb-4">Coffee 50% | Milk 50%</p>
+                <p class="text-lg font-bold text-coffee-dark mb-4">$8.50</p>
+                <button class="bg-gold text-black border-none px-5 py-2 rounded-full font-bold cursor-pointer hover:bg-[#e0ac5e] opacity-0 hover:opacity-100 transition-opacity absolute bottom-5 left-1/2 -translate-x-1/2 shadow-md">Order Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why are we different -->
+    <section class="py-20 px-[5%] bg-coffee-dark text-white text-center relative overflow-hidden">
+        <!-- Decoration bean if needed -->
+        <!-- <img src="../img/pepe-removebg-preview.png" class="absolute top-0 right-0 w-32 opacity-50" /> -->
+
+        <h2 class="text-4xl font-bold mb-4">Why are we different?</h2>
+        <p class="text-gray-300 mb-12">We don't just make your coffee, we make your day!</p>
+
+        <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 px-4 justify-start md:justify-center md:overflow-visible md:snap-none md:flex-wrap [&::-webkit-scrollbar]:hidden">
+            <!-- Feature Card -->
+            <div class="min-w-[260px] snap-center bg-[#4a3b3b] p-8 hover:bg-gold hover:text-black transition-colors duration-300 cursor-default group">
+                <img src="../img/coffee-bean_6451086.png" alt="Beans" class="w-16 h-16 mx-auto mb-5 invert group-hover:invert-0 transition-all">
+                <h3 class="text-xl font-bold mb-3">Supreme Beans</h3>
+                <p class="text-sm text-gray-400 group-hover:text-black">Beans that provides<br>great taste</p>
+            </div>
+            <!-- More feature cards... -->
+             <div class="min-w-[280px] snap-center bg-[#4a3b3b] p-8 hover:bg-gold hover:text-black transition-colors duration-300 cursor-default group">
+                <img src="../img/exito.png" alt="High Quality" class="w-16 h-16 mx-auto mb-5 invert group-hover:invert-0 transition-all">
+                <h3 class="text-xl font-bold mb-3">High Quality</h3>
+                <p class="text-sm text-gray-400 group-hover:text-black">We provide the<br>highest quality</p>
+            </div>
+             <div class="min-w-[260px] snap-center bg-[#4a3b3b] p-8 hover:bg-gold hover:text-black transition-colors duration-300 cursor-default group">
+                <img src="../img/taza-de-cafe.png" alt="Extraordinary" class="w-16 h-16 mx-auto mb-5 invert group-hover:invert-0 transition-all">
+                <h3 class="text-xl font-bold mb-3">Extraordinary</h3>
+                <p class="text-sm text-gray-400 group-hover:text-black">Coffee like you have<br>never tasted</p>
+            </div>
+             <div class="min-w-[260px] snap-center bg-[#4a3b3b] p-8 hover:bg-gold hover:text-black transition-colors duration-300 cursor-default group">
+                <img src="../img/signo-de-dolar.png" alt="Affordable" class="w-16 h-16 mx-auto mb-5 invert group-hover:invert-0 transition-all">
+                <h3 class="text-xl font-bold mb-3">Affordable Price</h3>
+                <p class="text-sm text-gray-400 group-hover:text-black">Our Coffee prices are<br>easy to afford</p>
+            </div>
+        </div>
+
+        <div class="mt-16">
+            <h3 class="text-2xl mb-2 text-gray-300">Great ideas start with great coffee. Lets help you achieve that</h3>
+            <h3 class="text-2xl font-bold mb-8 text-gold">Get started today.</h3>
+            <button class="bg-gold text-black border-none px-8 py-3 rounded-full font-bold text-lg cursor-pointer hover:bg-[#e0ac5e]">Join Us</button>
+        </div>
+    </section>
+
+    <!-- Amazing Morning -->
+    <section id="parallax-container" class="relative overflow-hidden flex flex-col md:flex-row items-center py-32 px-[10%] gap-10 min-h-[600px]">
+    
+    <div id="parallax-bg" 
+        class="absolute inset-0 z-0 bg-cover bg-center scale-110" 
+        style="background-image: linear-gradient(rgba(60,30,10,0.7), rgba(40,20,5,0.8)), url('../img/granos.jpg');">
+    </div>
+
+    <div class="flex-1 text-left z-10 text-white">
+        <h2 class="text-4xl md:text-6xl font-bold mb-5 leading-tight">
+            Get a chance to have an<br><span class="text-gold">Amazing morning</span>
+        </h2>
+        <p class="text-lg text-gray-200 mb-8 max-w-lg leading-relaxed">
+            We are giving you a one-time opportunity to experience a better life with coffee.
+        </p>
+        <button class="bg-gold text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-[#e0ac5e] transition-transform active:scale-95 shadow-xl">
+            Order Now
+        </button>
+    </div>
+
+    <div class="flex-1 relative z-10 flex justify-center">
+        <img id="parallax-cup" src="../img/vaso2.png" alt="Coffee Cup" 
+            class="w-full max-w-md drop-shadow-[0_20px_50px_rgba(0,0,0,0.6)] brightness-90 transition-transform duration-75 ease-out">
+    </div>
+</section>
+
+    <!-- Feedback -->
+    <section class="py-20 px-[10%] text-center bg-white">
+        <h2 class="text-4xl font-bold mb-4 text-coffee-dark">Our coffee perfection feedback</h2>
+        <p class="text-gray-500 mb-12">Our customers has amazing things to say about us</p>
+
+        <div class="relative bg-[#fff0db] border border-[#ffe0b2] p-10 max-w-3xl mx-auto rounded-lg mt-10 z-20">
+             <div class="absolute -top-5 left-10 text-6xl text-gold font-serif leading-none">“</div>
+            <p class="text-lg text-gray-700 mb-8 italic leading-relaxed">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <div class="flex flex-col items-center">
+                 <div class="text-xl font-bold text-coffee-dark">Jonny Thomas</div>
+                 <div class="text-sm text-gray-500 mb-4">Project Manager</div>
+                 <div class="absolute -bottom-[75px] left-1/2 -translate-x-1/2 bg-white p-2 rounded-[20px] shadow-lg z-20">
+                     <img src="../img/personapelona.jpg" alt="Customer" class="w-[100px] h-[100px] rounded-[15px] object-cover block">
+                 </div>
+            </div>
+        </div>
+        <!-- Spacer for the image popping out -->
+        <div class="h-16"></div>
+    </section>
+
+    <!-- Footer -->
+  <footer class="bg-coffee-dark text-white pb-16 px-[5%] md:px-[10%] mt-32 relative">
+    
+    <div class="relative -top-20 md:-top-24 max-w-5xl mx-auto z-20">
+        <div class="bg-[#4a3b3b] rounded-3xl p-8 md:p-12 shadow-2xl border border-white/5 overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-full -mr-16 -mt-16 blur-3xl"></div>
+            
+            <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+                <div class="text-center lg:text-left max-w-md">
+                    <h2 class="text-2xl md:text-4xl font-bold mb-3 tracking-tight">
+                        Subscribe to get the Latest News
+                    </h2>
+                    <p class="text-gray-300 text-sm md:text-base leading-relaxed">
+                        Don't miss out on our latest news, updates, tips and special offers.
+                    </p>
+                </div>
+
+                <div class="w-full max-w-md">
+                    <form class="flex flex-col md:flex-row gap-4 md:gap-2 p-0 md:p-1 bg-transparent md:bg-white md:rounded-full">
+                        <input 
+                            type="email" 
+                            placeholder="Enter your mail" 
+                            class="flex-1 w-full md:w-auto bg-white md:bg-transparent px-6 py-3 outline-none text-black placeholder:text-gray-500 rounded-full md:rounded-none text-center md:text-left shadow-lg md:shadow-none"
+                        >
+                        <button class="w-full md:w-auto bg-gold hover:bg-[#e0ac5e] text-black font-bold px-8 py-3 rounded-full transition-all duration-300 active:scale-95 shadow-lg md:shadow-none">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mt-10">
+        
+        <div class="flex flex-col gap-6">
+            <div class="text-4xl font-['Clicker_Script'] font-bold text-gold">Bean Scene</div>
+            <p class="text-sm text-gray-400 leading-7">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+            </p>
+            <div class="flex gap-4">
+                <a href="#" class="p-2 bg-white/5 rounded-full hover:text-gold hover:bg-white/10 transition-all">
+                    <ion-icon name="logo-facebook" class="text-xl"></ion-icon>
+                </a>
+                <a href="#" class="p-2 bg-white/5 rounded-full hover:text-gold hover:bg-white/10 transition-all">
+                    <ion-icon name="logo-instagram" class="text-xl"></ion-icon>
+                </a>
+                <a href="#" class="p-2 bg-white/5 rounded-full hover:text-gold hover:bg-white/10 transition-all">
+                    <ion-icon name="logo-youtube" class="text-xl"></ion-icon>
+                </a>
+                <a href="#" class="p-2 bg-white/5 rounded-full hover:text-gold hover:bg-white/10 transition-all">
+                    <ion-icon name="logo-twitter" class="text-xl"></ion-icon>
+                </a>
+            </div>
+        </div>
+
+        <div>
+            <h3 class="text-lg font-bold mb-6 border-b border-white/10 pb-2 inline-block">About</h3>
+            <ul class="space-y-4 list-none p-0">
+                <li><a href="#" class="text-gray-400 hover:text-gold transition-colors text-sm">Menu</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-gold transition-colors text-sm">Features</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-gold transition-colors text-sm">News & Blogs</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-gold transition-colors text-sm">Help & Supports</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3 class="text-lg font-bold mb-6 border-b border-white/10 pb-2 inline-block">Company</h3>
+            <ul class="space-y-4 list-none p-0">
+                <li><a href="#" class="text-gray-400 hover:text-gold transition-colors text-sm">How we work</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-gold transition-colors text-sm">Terms of service</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-gold transition-colors text-sm">Pricing</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-gold transition-colors text-sm">FAQ</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3 class="text-lg font-bold mb-6 border-b border-white/10 pb-2 inline-block">Contact Us</h3>
+            <ul class="space-y-4 list-none p-0 text-gray-400 text-sm">
+                <li class="flex gap-3">
+                    <span>Akshya Nagar 1st Block 1st Cross, Rammurthy nagar, Bangalore-560016</span>
+                </li>
+                <li>+1 202-918-2132</li>
+                <li>beanscene@mail.com</li>
+                <li>www.beanscene.com</li>
+            </ul>
+        </div>
+    </div>
+</footer>
+    <!-- Script for sticky header -->
+    <script>
+        window.addEventListener('scroll', function() {
+            // Only apply sticky behavior on desktop (md breakpoint is 768px)
+            if (window.innerWidth >= 768) {
+                const header = document.getElementById('main-header');
+                if (window.scrollY > 50) {
+                    // Scrolled state
+                    header.classList.remove('bg-transparent', 'absolute');
+                    header.classList.add('fixed', 'bg-black', 'shadow-md', 'top-0');
+                } else {
+                    // Initial state
+                    header.classList.add('bg-transparent', 'absolute');
+                    header.classList.remove('fixed', 'bg-black', 'shadow-md', 'top-0');
+                }
+            }
+        });
+
+        // Handle resize to reset styles if switching between mobile and desktop
+        window.addEventListener('resize', function() {
+            const header = document.getElementById('main-header');
+            if (window.innerWidth < 768) {
+                // Reset to mobile styles
+                header.classList.remove('fixed', 'bg-transparent', 'absolute', 'shadow-md', 'top-0');
+                header.classList.add('relative', 'bg-black');
+            } else {
+                // Reset to desktop initial state (assuming scrolled to top, or let scroll handler fix it)
+                if (window.scrollY <= 50) {
+                     header.classList.add('bg-transparent', 'absolute');
+                     header.classList.remove('relative', 'bg-black', 'fixed', 'shadow-md', 'top-0');
+                } else {
+                     header.classList.add('fixed', 'bg-black', 'shadow-md', 'top-0');
+                     header.classList.remove('relative', 'bg-transparent', 'absolute');
+                }
+            }
+        });
+
+
+        window.addEventListener('scroll', function() {
+        const scrollValue = window.scrollY;
+        const section = document.querySelector('#parallax-container');
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        
+        // Solo ejecutar si la sección es visible en pantalla
+        if (scrollValue > sectionTop - window.innerHeight && scrollValue < sectionTop + sectionHeight) {
+            const relativeScroll = scrollValue - sectionTop;
+
+            // 1. Mover el fondo hacia abajo lentamente (Efecto profundidad)
+            const bg = document.querySelector('#parallax-bg');
+            bg.style.transform = `translateY(${relativeScroll * 0.2}px)`;
+
+            // 2. Mover el vaso ligeramente hacia arriba (Efecto flotante)
+            const cup = document.querySelector('#parallax-cup');
+            cup.style.transform = `translateY(${relativeScroll * -0.1}px) rotate(${relativeScroll * 0.02}deg)`;
+        }
+    });
+    </script>
+</body>
+</html>
