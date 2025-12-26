@@ -2,26 +2,26 @@
 
 ## Introducción
 
-Durante el desarrollo del proyecto seleccioné una plantilla de **Figma** creada por **Mohammed Jawed**, la cual tomé como base para el diseño inicial.  
+Para el desarrollo de este proyecto, seleccioné una plantilla de **Figma** creada por **Mohammed Jawed** como base para el diseño inicial.
 El archivo original puede consultarse en el siguiente enlace:
 
-https://www.figma.com/community/file/1201418433329014860
+[Bean Scene Coffee Landingpage](https://www.figma.com/community/file/1201418433329014860)
 
-A partir de esta plantilla implementé el **MCP de Figma**, además de realizar diversos cambios y ajustes para adaptarla al proceso de desarrollo del proyecto.
+A partir de esta plantilla, implementé el **MCP de Figma** y realicé diversos cambios y ajustes para adaptar el diseño al proceso de desarrollo y darle una identidad propia.
 
 ---
 
-## Complicaciones durante el desarrollo
+## Retos durante el desarrollo
 
-Uno de los principales problemas surgió al utilizar **FNM (Fast Node Manager)** como gestor de versiones de Node.js. Al tener este control de versiones, se presentaron inconvenientes para vincularlo correctamente con el IDE/editor, ya que no se reconocían los siguientes comandos:
+Uno de los principales desafíos surgió al utilizar **FNM (Fast Node Manager)** como gestor de versiones de Node.js. Debido a la gestión de versiones, se presentaron inconvenientes para vincular correctamente los comandos con el IDE, ya que no se reconocían:
 
 - `fnm`
 - `node`
 - `npx`
 
-Después de varios intentos, la solución fue **definir directamente la ruta de ejecución** y agregar un **token de la API de Figma**, lo que permitió que el MCP funcionara correctamente.
+La solución consistió en **definir explícitamente la ruta de ejecución** y agregar el **token de la API de Figma**, lo que permitió el correcto funcionamiento del MCP.
 
-A continuación se muestra la estructura utilizada para la configuración del MCP:
+A continuación, se muestra la estructura utilizada para la configuración del MCP:
 
 ```json
 {
@@ -40,56 +40,61 @@ A continuación se muestra la estructura utilizada para la configuración del MC
     }
   }
 }
-## Organización del proyecto
-
-### Carpeta `dising`
-
-Una vez resuelto el problema de configuración, se trabajó inicialmente en la carpeta **`dising`**, donde se utilizó únicamente **CSS vanilla**.  
-El objetivo de esta etapa fue explorar la herramienta y validar el diseño antes de implementar **TailwindCSS**.  
-Además, en esta fase se comenzó a trabajar con **diseño responsivo**.
-
-### Carpeta `view`
-
-En la carpeta **`view`** se realizó el desarrollo principal de la aplicación utilizando **TailwindCSS**, reforzando la implementación de la **responsividad**.
-
-También se realizaron cambios respecto al diseño original de Figma con el fin de darle una identidad visual diferente al proyecto.
-
-Para la parte de interacción visual, se utilizó **JavaScript vanilla** exclusivamente para implementar un efecto **parallax**, manteniendo el resto del proyecto lo más ligero posible.
+```
 
 ---
 
-## Flujo de desarrollo
+## Organización del Proyecto
 
-El siguiente diagrama representa el flujo general de cómo se llevó a cabo el desarrollo, la compilación y el resultado final en el navegador:
+### Carpeta `Dising`
+Inicialmente, una vez resuelta la configuración, se trabajó en la carpeta **`Dising`** utilizando **CSS Vanilla**.
+El objetivo de esta etapa fue explorar la estructura y validar el diseño base antes de migrar a herramientas más avanzadas. Aquí también se establecieron las primeras bases del **diseño responsivo**.
 
+### Carpeta `View`
+En la carpeta **`View`** se llevó a cabo el desarrollo principal de la aplicación, implementando **TailwindCSS** para agilizar el estilizado y asegurar una **responsividad** robusta.
+
+Se realizaron modificaciones significativas respecto al diseño original de Figma para diferenciar visualmente el proyecto.
+
+Para la interacción, se utilizó **JavaScript Vanilla** exclusivamente para implementar un efecto **parallax**, manteniendo el proyecto ligero y optimizado.
+
+---
+
+## Flujo de Desarrollo
+
+El siguiente diagrama ilustra el proceso de desarrollo, compilación y renderizado final en el navegador:
+
+```mermaid
 graph TD
-    subgraph "Desarrollo (Trabajo del desarrollador)"
+    subgraph "Desarrollo (Tu Trabajo)"
         HTML["View/tailwind.html<br>(HTML con clases Tailwind)"]
         CSS_SRC["Dising/tailwin.css<br>(Configuración @theme y @import)"]
     end
 
-    subgraph "Compilación (Proceso automático)"
+    subgraph "Compilación (Automático)"
         CLI["Tailwind CLI v4<br>(npm run dev / build)"]
     end
 
-    subgraph "Resultado final (Navegador)"
+    subgraph "Resultado Final (Navegador)"
         CSS_OUT["View/output.css<br>(CSS generado, minificado y optimizado)"]
-        BROWSER["Navegador Web<br>(Renderiza HTML + CSS)"]
+        BROWSER["Navegador Web<br>(Renderiza HTML + CSS Generado)"]
     end
 
     HTML --> CLI
     CSS_SRC --> CLI
-    CLI -- "Escanea clases y genera CSS" --> CSS_OUT
-    HTML -- "Enlaza CSS" --> CSS_OUT
+    CLI -- "Escanea clases y genera" --> CSS_OUT
+    HTML -- "Enlaza" --> CSS_OUT
     CSS_OUT --> BROWSER
     HTML --> BROWSER
+```
 
-## Tecnologías utilizadas
+---
 
-- HTML5  
-- CSS3  
-- TailwindCSS v4  
-- JavaScript (Vanilla)  
-- Figma  
-- Node.js  
-- FNM (Fast Node Manager)
+## Tecnologías Utilizadas
+
+- **HTML5**: Estructura semántica.
+- **CSS3**: Estilos base y personalizados.
+- **TailwindCSS v4**: Framework de utilidades para diseño rápido y responsivo.
+- **JavaScript (Vanilla)**: Lógica para efectos visuales (Parallax).
+- **Figma**: Diseño y prototipado (MCP integration).
+- **Node.js**: Entorno de ejecución.
+- **FNM (Fast Node Manager)**: Gestión de versiones de Node.js.
