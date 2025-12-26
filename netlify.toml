@@ -1,0 +1,11 @@
+# Netlify Configuration File
+
+[build]
+  # Directory to publish (relative to root)
+  publish = "public"
+
+  # Build command to run
+  command = "npm run build:prod"
+
+[dev]
+  command = "npm run dev"
