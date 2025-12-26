@@ -38,7 +38,18 @@ let htmlContent = fs.readFileSync(HTML_SRC, 'utf8');
 // In source: src="../img/photo.jpg"
 // In prod (public/index.html): src="../img/photo.jpg" -> This would look for public/../img which is WRONG.
 // We need to replace "../img/" with "img/" because img folder is now a sibling of index.html.
-htmlContent = htmlContent.replace(/\.\.\/img\//g, 'img/');
+// BUT we must be careful not to break Tailwind classes like bg-[url('../img/...')]
+// Tailwind CSS is located in View/output.css, so relative path "../img/..." is actually CORRECT for CSS.
+// If we change the class name in HTML to bg-[url('img/...')], it won't match the compiled CSS class selector.
+
+// Strategy:
+// 1. Replace src="../img/" with src="img/" (for standard img tags)
+// 2. Leave bg-[url('../img/')] alone because that matches the compiled CSS and relative path structure from CSS file.
+
+htmlContent = htmlContent.replace(/src="\.\.\/img\//g, 'src="img/');
+// Also handle lazy loading or other attributes if present, but primarily src.
+// If there are other attributes using ../img/, add them here.
+
 
 fs.writeFileSync(HTML_DEST, htmlContent);
 
