@@ -28,6 +28,39 @@ Contiene los archivos fuente de estilos:
 Para la interacción, se utilizó **JavaScript Vanilla** exclusivamente para implementar un efecto **parallax**, manteniendo el proyecto ligero y optimizado.
 
 ---
+## Retos durante el desarrollo
+
+Uno de los principales desafíos surgió al utilizar **FNM (Fast Node Manager)** como gestor de versiones de Node.js. Debido a la gestión de versiones, se presentaron inconvenientes para vincular correctamente los comandos con el IDE, ya que no se reconocían:
+
+- `fnm`
+- `node`
+- `npx`
+
+La solución consistió en **definir explícitamente la ruta de ejecución** y agregar el **token de la API de Figma**, lo que permitió el correcto funcionamiento del MCP.
+
+A continuación, se muestra la estructura utilizada para la configuración del MCP:
+
+```json
+{
+  "mcpServers": {
+    "Framelink MCP for Figma": {
+      "command": "fnm",
+      "args": [
+        "exec",
+        "--using=default",
+        "--",
+        "npx",
+        "-y",
+        "figma-developer-mcp",
+        "--figma-api-key=TU_FIGMA_API_KEY_AQUI"
+      ]
+    }
+  }
+}
+```
+
+---
+
 
 ## Flujo de Desarrollo
 
@@ -68,3 +101,45 @@ graph TD
 - **Figma**: Diseño y prototipado (MCP integration).
 - **Node.js**: Entorno de ejecución.
 - **Netlify**: Plataforma de despliegue continuo.
+
+## Requisitos Previos (FNM)
+
+Recomendamos usar **fnm** (Fast Node Manager) para gestionar la versión de Node.js.
+
+1.  **Instalar fnm**:
+    - **Windows**: `winget install Schniz.fnm`
+    - **Mac/Linux**: `curl -fsSL https://fnm.vercel.app/install | bash`
+
+2.  **Configurar Node.js**:
+    ```bash
+    fnm install --lts
+    fnm use lts
+    ```
+
+## Instalación
+
+1.  Instalar las dependencias del proyecto:
+    ```bash
+    npm install
+    ```
+
+## Cómo Correr el Proyecto
+
+1.  **Compilar CSS (Modo Desarrollo)**:
+    En una terminal, ejecuta este comando para compilar Tailwind en tiempo real:
+    ```bash
+    npm run dev
+    ```
+
+2.  **Iniciar Servidor Local**:
+    En **otra terminal**, ejecuta este comando para abrir el sitio en `http://localhost:3000`:
+    ```bash
+    npm start
+    ```
+
+## Construcción (Producción)
+
+Para generar el CSS optimizado y minificado para despliegue:
+```bash
+npm run build
+```

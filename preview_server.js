@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const PORT = 3000;
+const PUBLIC_DIR = path.join(__dirname, 'public');
 
 const mimeTypes = {
     '.html': 'text/html',
@@ -25,10 +26,9 @@ const mimeTypes = {
 const server = http.createServer((req, res) => {
     console.log(`request ${req.url}`);
 
-    let filePath = '.' + req.url;
-    if (filePath === './') {
-        filePath = './View/tailwind.html';
-    }
+    // Prevent directory traversal and serve from public
+    const safeUrl = path.normalize(req.url).replace(/^(\.\.[\/\\])+/, '');
+    let filePath = path.join(PUBLIC_DIR, safeUrl === '/' || safeUrl === '\\' ? 'index.html' : safeUrl);
 
     const extname = String(path.extname(filePath)).toLowerCase();
     const contentType = mimeTypes[extname] || 'application/octet-stream';
@@ -36,10 +36,8 @@ const server = http.createServer((req, res) => {
     fs.readFile(filePath, (error, content) => {
         if (error) {
             if (error.code == 'ENOENT') {
-                fs.readFile('./404.html', (error, content) => {
-                    res.writeHead(404, { 'Content-Type': 'text/html' });
-                    res.end('<h1>404 Not Found</h1><p>The file you requested does not exist.</p>', 'utf-8');
-                });
+                res.writeHead(404, { 'Content-Type': 'text/html' });
+                res.end('<h1>404 Not Found</h1><p>The file you requested does not exist.</p>', 'utf-8');
             } else {
                 res.writeHead(500);
                 res.end('Sorry, check with the site admin for error: ' + error.code + ' ..\n');
@@ -53,5 +51,5 @@ const server = http.createServer((req, res) => {
 
 server.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}/`);
-    console.log(`To view tailwind.html, go to http://localhost:${PORT}/tailwind.html`);
+    console.log(`Serving files from: ${PUBLIC_DIR}`);
 });
